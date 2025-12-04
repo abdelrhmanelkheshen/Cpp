@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build OpenCV project",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/*.cpp",
+        "-IC:/opencv/opencv/build/install/include",   // parent folder of opencv2
+        "-LC:/opencv/opencv/build/install/x64/mingw/lib", // library folder
+        "-lopencv_core4120",
+        "-lopencv_highgui4120",
+        "-lopencv_imgcodecs4120",
+        "-lopencv_imgproc4120",
+        "-o",
+        "${workspaceFolderBasename}.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
